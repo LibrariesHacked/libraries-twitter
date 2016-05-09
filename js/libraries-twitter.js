@@ -39,14 +39,13 @@ $(function () {
             while (x.length < 17) x.push('');
             var now = moment();
             // Created is index 9
-            if (x[9]) data[i][15] = moment(x[9], 'dd MMM DD HH:mm:ss ZZ YYYY', 'en').format('YYYYMMDDHHMM');
+            if (x[9]) data[i][15] = moment(x[9], 'dd MMM DD HH:mm:ss ZZ YYYY', 'en').format('YYYYMMDDHHmm');
+            if (x[9]) data[i][13] = moment.duration(now - moment(x[9], 'dd MMM DD HH:mm:ss ZZ YYYY', 'en')).humanize();
             if (x[9]) data[i][9] = moment(x[9], 'dd MMM DD HH:mm:ss ZZ YYYY', 'en').format('Do MMM YY');
-            if (x[9]) data[i][13] = moment.duration(now - moment(x[9], 'Do MMM YY')).humanize();
-
             // Last tweeted is index 12
-            if (x[12]) data[i][16] = moment(x[12], 'dd MMM DD HH:mm:ss ZZ YYYY', 'en').format('YYYYMMDDHHMM');
+            if (x[12]) data[i][16] = moment(x[12], 'dd MMM DD HH:mm:ss ZZ YYYY', 'en').format('YYYYMMDDHHmm');
+            if (x[12]) data[i][14] = moment.duration(now - moment(x[12], 'dd MMM DD HH:mm:ss ZZ YYYY', 'en')).humanize();
             if (x[12]) data[i][12] = moment(x[12], 'dd MMM DD HH:mm:ss ZZ YYYY', 'en').format('Do MMM YY');
-            if (x[12]) data[i][14] = moment.duration(now - moment(x[12], 'Do MMM YY')).humanize();
         });
 
         // Initialise the table
@@ -92,7 +91,7 @@ $(function () {
                         api.column(14, { page: 'current' }).data().each(function (group, i) {
                             if (last !== group) {
                                 $(rows).eq(i).before(
-                                    '<tr class="grouping"><td colspan="7">' + (group != '' ? 'Last tweeted ' + group + ' ago' : 'Never tweeted')  + '</td></tr>'
+                                    '<tr class="grouping"><td colspan="7">' + (group != '' ? 'Last tweeted ' + group + ' ago' : 'Never tweeted') + '</td></tr>'
                                 );
                                 last = group;
                             }

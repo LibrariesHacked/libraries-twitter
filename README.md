@@ -1,2 +1,3 @@
-# libraries-twitter
-Libraries on Twitter
+# Libraries on Twitter
+
+Listing UK public libraries on Twitter.
