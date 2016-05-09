@@ -1,0 +1,53 @@
+﻿body {
+}
+
+tr.grouping {
+    text-transform: uppercase;
+    cursor: default !important;
+    font-size: smaller;
+    text-align: right;
+    background-color: #F9F9F9;
+}
+
+    tr.grouping td {
+        padding: 4px !important;
+    }
+
+tr {
+    cursor:pointer;
+}
+
+tr.nohover:hover {
+    background-color: #FFFFFF !important;
+    cursor: default !important;
+}
+
+/*
+    CSS Loading indicator
+*/
+
+.loading {
+    min-width: 300px;
+}
+
+    .loading:after {
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: bottom;
+        -webkit-animation: ellipsis steps(4,end) 900ms infinite;
+        animation: ellipsis steps(4,end) 900ms infinite;
+        content: "\2026"; /* ascii code for the ellipsis character */
+        width: 0px;
+    }
+
+@keyframes ellipsis {
+    to {
+        width: 20px;
+    }
+}
+
+@-webkit-keyframes ellipsis {
+    to {
+        width: 20px;
+    }
+}
