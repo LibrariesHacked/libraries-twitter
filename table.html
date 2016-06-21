@@ -1,0 +1,93 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="scripts/html5shiv.min.js"></script>
+      <script src="scripts/respond.min.js"></script>
+    <![endif]-->
+    <title>Libraries on Twitter | Libraries Hacked</title>
+    <link href="bower_components/bootswatch/flatly/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet" />
+    <link href="css/libraries-twitter.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">{ twitter:libraries }</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Gallery View <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Table view</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <h1>Libraries on Twitter</h1>
+        <p>A listing of UK public libraries on Twitter.  Data taken from Google Spreadsheet compiled by <a href="https://twitter.com/shedsue">@ShedSue</a>, with contributions from the library community.  With additional data from Twitter to show activity.  Click on a row to see more details.  If any twitter accounts are missing, contribute on the Google sheet.</p>
+        <p>
+            <a href="https://s.coop/libtwit/" class="btn btn-success" target="_blank">Edit data</a>
+        </p>
+        <p class="loading">Loading</p>
+    </div>
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#divAuthorities" data-toggle="tab">Authorities</a></li>
+            <li><a href="#divLibraries" data-toggle="tab">Libraries</a></li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade active in" id="divAuthorities">
+                <table class="table table-responsive" id="tableAuthoritiesTwitter"></table>
+            </div>
+            <div class="tab-pane fade" id="divLibraries">
+                <table class="table table-responsive" id="tableLibrariesTwitter"></table>
+            </div>
+        </div>
+        <hr />
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-unstyled">
+                        <li>a <a href="https://www.librarieshacked.org/">{ libraries:hacked }</a> project.</li>
+                        <li class="pull-right"><a href="#top">back to top</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="bower_components/moment/min/moment.min.js" type="text/javascript"></script>
+    <script src="bower_components/datatables.net/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+    <script src="bower_components/datatables.net-buttons/js/dataTables.buttons.min.js" type="text/javascript"></script>
+    <script src="bower_components/datatables.net-buttons-bs/js/buttons.bootstrap.min.js" type="text/javascript"></script>
+    <script src="bower_components/datatables.net-buttons/js/buttons.print.min.js" type="text/javascript"></script>
+    <script src="bower_components/datatables.net-buttons/js/buttons.html5.min.js" type="text/javascript"></script>
+    <script src="bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="bower_components/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="bower_components/jszip/dist/jszip.min.js"></script>
+    <script src="js/twitterlibraries.js" type="text/javascript"></script>
+    <script src="js/table.js" type="text/javascript"></script>
+</body>
+</html>
