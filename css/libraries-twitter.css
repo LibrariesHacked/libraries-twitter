@@ -1,27 +1,6 @@
 ﻿body {
 }
 
-tr.grouping {
-    text-transform: uppercase;
-    cursor: default !important;
-    font-size: smaller;
-    text-align: right;
-    background-color: #F9F9F9;
-}
-
-    tr.grouping td {
-        padding: 4px !important;
-    }
-
-tr {
-    cursor:pointer;
-}
-
-tr.nohover:hover {
-    background-color: #FFFFFF !important;
-    cursor: default !important;
-}
-
 /*
     CSS Loading indicator
 */
@@ -39,6 +18,12 @@ tr.nohover:hover {
         content: "\2026"; /* ascii code for the ellipsis character */
         width: 0px;
     }
+
+#divGallery h5 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: smaller;
+}
 
 @keyframes ellipsis {
     to {

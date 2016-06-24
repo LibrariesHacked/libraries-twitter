@@ -18,8 +18,8 @@ $(function () {
         return html;
     };
 
-    var buildDataTable = function (twitterType) {
-        var table = $('#table' + twitterType + 'Twitter')
+    var buildDataTable = function () {
+        var table = $('#tableTwitter')
                 .DataTable(
                 {
                     processing: true,
@@ -27,7 +27,7 @@ $(function () {
                     buttons: [
                         //'print'
                     ],
-                    data: createData(TwitterLibraries[twitterType]),
+                    data: createData($.merge(TwitterLibraries.Authorities, TwitterLibraries.Libraries)),
                     order: [[14, 'desc']],
                     columns: [
                         {
@@ -36,52 +36,45 @@ $(function () {
                                 return data + ' <a href="https://twitter.com/' + row[1] + '" target="_blank">(' + row[1] + ')</a>';
                             }
                         },
+
                         { title: "Description", data: 3, visible: false },
                         { title: "Website", data: 4, visible: false },
                         { title: "Followers", data: 5, defaultContent: '' },
                         { title: "Following", data: 6, visible: false, defaultContent: '' },
                         { title: "Tweets", data: 7, defaultContent: '' },
                         { title: "Favourites", data: 8, visible: false, defaultContent: '' },
+                        { title: "Last tweeted", data: 12, defaultContent: '', "iDataSort": 16 },
                         { title: "Created", data: 9, defaultContent: '', "iDataSort": 15 },
                         { title: "Image", data: 10, visible: false },
                         { title: "Last tweet", data: 11, visible: false },
-                        { title: "Last tweeted", data: 12, defaultContent: '', "iDataSort": 16 },
                         { title: "Created friendly", data: 13, visible: false, "iDataSort": 15 },
                         { title: "Tweeted friendly", data: 14, visible: false, "iDataSort": 16 },
                         { title: "Created system", data: 15, visible: false },
                         { title: "Tweeted system", data: 16, visible: false }
                     ],
-                    responsive: true,
-                    //drawCallback: function (settings) {
-                    //    var api = this.api();
-                    //    var rows = api.rows({ page: 'current' }).nodes();
-                    //    var last = null;
-                    //    api.column(12, { page: 'current' }).data().each(function (group, i) {
-                    //        if (last !== group) {
-                    //            $(rows).eq(i).before(
-                    //                '<tr class="grouping"><td colspan="7">' + (group != '' ? 'Last tweeted ' + group + ' ago' : 'Never tweeted') + '</td></tr>'
-                    //            );
-                    //            last = group;
-                    //        }
-                    //    });
-                    //}
-                });
-
-        // Add event listener for opening and closing details
-        //$('#table' + twitterType + 'Twitter tbody').on('click', 'tr', function () {
-        //    var tr = $(this).closest('tr');
-        //    var row = table.row(tr);
-        //    if (row.child.isShown()) {
-        //        row.child.hide();
-        //        tr.removeClass('shown');
-        //    }
-        //    else {
-        //        row.child(formatDetails(row.data()), 'nohover').show();
-        //        tr.addClass('shown');
-        //    }
-        //});
+                    responsive: {
+                        details: {
+                            display: $.fn.dataTable.Responsive.display.modal({
+                                header: function (row) {
+                                    var data = row.data();
+                                    return 'Details for ' + data[0] + ' ' + data[1];
+                                }
+                            }),
+                            renderer: $.fn.dataTable.Responsive.renderer.tableAll({
+                                tableClass: 'table'
+                            })
+                        }
+                    },
+                    bAutoWidth: false
+                })
     };
 
+    //////////////////////////////////////////////////////
+    // Function: CreateData()
+    // 
+    // Input: dataset []
+    // Returns:
+    //////////////////////////////////////////////////////
     var createData = function (ds) {
         $.each(ds, function (i, x) {
             while (x.length < 17) x.push('');
@@ -96,9 +89,12 @@ $(function () {
         return ds;
     };
 
+    //////////////////////////////////////////////////////////
+    // OnLoad
+    // On first run, load in the Twitter data and build the two tables.
+    //////////////////////////////////////////////////////////
     TwitterLibraries.loadData(function () {
-        buildDataTable('Authorities');
-        buildDataTable('Libraries');
+        buildDataTable();
         $('.loading').hide();
     });
 });

@@ -9,8 +9,8 @@
       <script src="scripts/html5shiv.min.js"></script>
       <script src="scripts/respond.min.js"></script>
     <![endif]-->
-    <title>Libraries on Twitter | Libraries Hacked</title>
-    <link href="bower_components/bootswatch/flatly/bootstrap.min.css" rel="stylesheet">
+    <title>libraries on twitter | libraries:hacked</title>
+    <link href="bower_components/bootswatch/simplex/bootstrap.min.css" rel="stylesheet">
     <link href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link href="bower_components/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
     <link href="bower_components/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet" />
@@ -32,43 +32,32 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Gallery View <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">Table view</a></li>
+                        <li class="active"><a href="/">table view <span class="sr-only">(current)</span></a></li>
+                        <li><a href="/gallery.html">gallery view (beta)</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Info</a></li>
+                        <li><a href="https://s.coop/libtwit/" target="_blank">edit data</a></li>
+                        <li><a href="#">info</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
     <div class="container">
-        <h1>Libraries on Twitter</h1>
+        <h1>libraries on twitter</h1>
         <p>A listing of UK public libraries on Twitter.  Data taken from Google Spreadsheet compiled by <a href="https://twitter.com/shedsue">@ShedSue</a>, with contributions from the library community.  With additional data from Twitter to show activity.  Click on a row to see more details.  If any twitter accounts are missing, contribute on the Google sheet.</p>
-        <p>
-            <a href="https://s.coop/libtwit/" class="btn btn-success" target="_blank">Edit data</a>
-        </p>
         <p class="loading">Loading</p>
     </div>
     <div class="container">
-        <ul class="nav nav-tabs">
-            <li class="active"><a href="#divAuthorities" data-toggle="tab">Authorities</a></li>
-            <li><a href="#divLibraries" data-toggle="tab">Libraries</a></li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade active in" id="divAuthorities">
-                <table class="table table-responsive" id="tableAuthoritiesTwitter"></table>
-            </div>
-            <div class="tab-pane fade" id="divLibraries">
-                <table class="table table-responsive" id="tableLibrariesTwitter"></table>
-            </div>
+        <div class="table-responsive">
+            <table class="table" id="tableTwitter"></table>
         </div>
         <hr />
         <footer>
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="list-unstyled">
-                        <li>a <a href="https://www.librarieshacked.org/">{ libraries:hacked }</a> project.</li>
+                        <li>a <a href="https://www.librarieshacked.org/">{ libraries:hacked }</a> project available on <a href="https://www.github.com/librarieshacked/libraries-twitter/" target="_blank">GitHub</a>.</li>
                         <li class="pull-right"><a href="#top">back to top</a></li>
                     </ul>
                 </div>

@@ -24,6 +24,7 @@
     "moment": "^2.13.0",
     "jszip": "^3.0.0",
     "datatables.net-responsive": "^2.1.0",
-    "datatables.net-responsive-bs": "^2.1.0"
+    "datatables.net-responsive-bs": "^2.1.0",
+    "shufflejs": "^4.0.0"
   }
 }
