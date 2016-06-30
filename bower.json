@@ -25,6 +25,7 @@
     "jszip": "^3.0.0",
     "datatables.net-responsive": "^2.1.0",
     "datatables.net-responsive-bs": "^2.1.0",
-    "shufflejs": "^4.0.0"
+    "shufflejs": "^4.0.0",
+    "font-awesome": "fontawesome#^4.6.3"
   }
 }

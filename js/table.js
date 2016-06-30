@@ -36,7 +36,6 @@ $(function () {
                                 return data + ' <a href="https://twitter.com/' + row[1] + '" target="_blank">(' + row[1] + ')</a>';
                             }
                         },
-
                         { title: "Description", data: 3, visible: false },
                         { title: "Website", data: 4, visible: false },
                         { title: "Followers", data: 5, defaultContent: '' },
@@ -57,12 +56,18 @@ $(function () {
                             display: $.fn.dataTable.Responsive.display.modal({
                                 header: function (row) {
                                     var data = row.data();
-                                    return 'Details for ' + data[0] + ' ' + data[1];
+                                    return data[0];
                                 }
                             }),
-                            renderer: $.fn.dataTable.Responsive.renderer.tableAll({
-                                tableClass: 'table'
-                            })
+                            renderer: function ( api, rowIdx, columns ) {
+                                var data = $.map( columns, function ( col, i ) {
+                                    return '<tr>'+
+                                            '<td>'+col.title+':'+'</td> '+
+                                            '<td>'+col.data+'</td>'+
+                                        '</tr>';
+                                } ).join('');
+                                return $('<table/>').append( data );
+                            }
                         }
                     },
                     bAutoWidth: false
