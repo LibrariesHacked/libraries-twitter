@@ -23,7 +23,7 @@ $(function () {
 
         // Also going to set up some keywords.
         // Also remove stopwords.
-        var stopwords = ['a', 'about', 'above', 'above', 'across', 'after', 'afterwards', 'again', 'against', 'all', 'almost', 'alone', 'along', 'already', 'also', 'although', 'always', 'am', 'among', 'amongst', 'amoungst', 'amount', 'an', 'and', 'another', 'any', 'anyhow', 'anyone', 'anything', 'anyway', 'anywhere', 'are', 'around', 'as', 'at', 'back', 'be', 'became', 'because', 'become', 'becomes', 'becoming', 'been', 'before', 'beforehand', 'behind', 'being', 'below', 'beside', 'besides', 'between', 'beyond', 'bill', 'both', 'bottom', 'but', 'by', 'call', 'can', 'cannot', 'cant', 'co', 'con', 'could', 'couldnt', 'cry', 'de', 'describe', 'detail', 'do', 'done', 'down', 'due', 'during', 'each', 'eg', 'eight', 'either', 'eleven', 'else', 'elsewhere', 'empty', 'enough', 'etc', 'even', 'ever', 'every', 'everyone', 'everything', 'everywhere', 'except', 'few', 'fifteen', 'fify', 'fill', 'find', 'fire', 'first', 'five', 'for', 'former', 'formerly', 'forty', 'found', 'four', 'from', 'front', 'full', 'further', 'get', 'give', 'go', 'had', 'has', 'hasnt', 'have', 'he', 'hence', 'her', 'here', 'hereafter', 'hereby', 'herein', 'hereupon', 'hers', 'herself', 'him', 'himself', 'his', 'how', 'however', 'hundred', 'ie', 'if', 'in', 'inc', 'indeed', 'interest', 'into', 'is', 'it', 'its', 'itself', 'keep', 'last', 'latter', 'latterly', 'least', 'less', 'ltd', 'made', 'many', 'may', 'me', 'meanwhile', 'might', 'mill', 'mine', 'more', 'moreover', 'most', 'mostly', 'move', 'much', 'must', 'my', 'myself', 'name', 'namely', 'neither', 'never', 'nevertheless', 'next', 'nine', 'no', 'nobody', 'none', 'noone', 'nor', 'not', 'nothing', 'now', 'nowhere', 'of', 'off', 'often', 'on', 'once', 'one', 'only', 'onto', 'or', 'other', 'others', 'otherwise', 'our', 'ours', 'ourselves', 'out', 'over', 'own', 'part', 'per', 'perhaps', 'please', 'put', 'rather', 're', 'same', 'see', 'seem', 'seemed', 'seeming', 'seems', 'serious', 'several', 'she', 'should', 'show', 'side', 'since', 'sincere', 'six', 'sixty', 'so', 'some', 'somehow', 'someone', 'something', 'sometime', 'sometimes', 'somewhere', 'still', 'such', 'system', 'take', 'ten', 'than', 'that', 'the', 'their', 'them', 'themselves', 'then', 'thence', 'there', 'thereafter', 'thereby', 'therefore', 'therein', 'thereupon', 'these', 'they', 'thickv', 'thin', 'third', 'this', 'those', 'though', 'three', 'through', 'throughout', 'thru', 'thus', 'to', 'together', 'too', 'top', 'toward', 'towards', 'twelve', 'twenty', 'two', 'un', 'under', 'until', 'up', 'upon', 'us', 'very', 'via', 'was', 'we', 'well', 'were', 'what', 'whatever', 'when', 'whence', 'whenever', 'where', 'whereafter', 'whereas', 'whereby', 'wherein', 'whereupon', 'wherever', 'whether', 'which', 'while', 'whither', 'who', 'whoever', 'whole', 'whom', 'whose', 'why', 'will', 'with', 'within', 'without', 'would', 'yet', 'you', 'your', 'yours', 'yourself', 'yourselves', 'the', 'today', 'new', 'library', 'rt', 'mt', 'twitter', 'amp', 'quot', 'http', 'https', 'book', 'books', 'read', 'join', 'reading', 'free', 'great', 'come', 'tomorrow', 'today', 'visit', 'week', 'libraries' ];
+        var stopwords = ['a', 'about', 'above', 'above', 'across', 'after', 'afterwards', 'again', 'against', 'all', 'almost', 'alone', 'along', 'already', 'also', 'although', 'always', 'am', 'among', 'amongst', 'amoungst', 'amount', 'an', 'and', 'another', 'any', 'anyhow', 'anyone', 'anything', 'anyway', 'anywhere', 'are', 'around', 'as', 'at', 'back', 'be', 'became', 'because', 'become', 'becomes', 'becoming', 'been', 'before', 'beforehand', 'behind', 'being', 'below', 'beside', 'besides', 'between', 'beyond', 'bill', 'both', 'bottom', 'but', 'by', 'call', 'can', 'cannot', 'cant', 'co', 'con', 'could', 'couldnt', 'cry', 'de', 'describe', 'detail', 'do', 'done', 'down', 'due', 'during', 'each', 'eg', 'eight', 'either', 'eleven', 'else', 'elsewhere', 'empty', 'enough', 'etc', 'even', 'ever', 'every', 'everyone', 'everything', 'everywhere', 'except', 'few', 'fifteen', 'fify', 'fill', 'find', 'fire', 'first', 'five', 'for', 'former', 'formerly', 'forty', 'found', 'four', 'from', 'front', 'full', 'further', 'get', 'give', 'go', 'had', 'has', 'hasnt', 'have', 'he', 'hence', 'her', 'here', 'hereafter', 'hereby', 'herein', 'hereupon', 'hers', 'herself', 'him', 'himself', 'his', 'how', 'however', 'hundred', 'ie', 'if', 'in', 'inc', 'indeed', 'interest', 'into', 'is', 'it', 'its', 'itself', 'keep', 'last', 'latter', 'latterly', 'least', 'less', 'ltd', 'made', 'many', 'may', 'me', 'meanwhile', 'might', 'mill', 'mine', 'more', 'moreover', 'most', 'mostly', 'move', 'much', 'must', 'my', 'myself', 'name', 'namely', 'neither', 'never', 'nevertheless', 'next', 'nine', 'no', 'nobody', 'none', 'noone', 'nor', 'not', 'nothing', 'now', 'nowhere', 'of', 'off', 'often', 'on', 'once', 'one', 'only', 'onto', 'or', 'other', 'others', 'otherwise', 'our', 'ours', 'ourselves', 'out', 'over', 'own', 'part', 'per', 'perhaps', 'please', 'put', 'rather', 're', 'same', 'see', 'seem', 'seemed', 'seeming', 'seems', 'serious', 'several', 'she', 'should', 'show', 'side', 'since', 'sincere', 'six', 'sixty', 'so', 'some', 'somehow', 'someone', 'something', 'sometime', 'sometimes', 'somewhere', 'still', 'such', 'system', 'take', 'ten', 'than', 'that', 'the', 'their', 'them', 'themselves', 'then', 'thence', 'there', 'thereafter', 'thereby', 'therefore', 'therein', 'thereupon', 'these', 'they', 'thickv', 'thin', 'third', 'this', 'those', 'though', 'three', 'through', 'throughout', 'thru', 'thus', 'to', 'together', 'too', 'top', 'toward', 'towards', 'twelve', 'twenty', 'two', 'un', 'under', 'until', 'up', 'upon', 'us', 'very', 'via', 'was', 'we', 'well', 'were', 'what', 'whatever', 'when', 'whence', 'whenever', 'where', 'whereafter', 'whereas', 'whereby', 'wherein', 'whereupon', 'wherever', 'whether', 'which', 'while', 'whither', 'who', 'whoever', 'whole', 'whom', 'whose', 'why', 'will', 'with', 'within', 'without', 'would', 'yet', 'you', 'your', 'yours', 'yourself', 'yourselves', 'the', 'today', 'new', 'library', 'rt', 'mt', 'twitter', 'amp', 'quot', 'http', 'https', 'book', 'books', 'read', 'join', 'reading', 'free', 'great', 'come', 'tomorrow', 'today', 'visit', 'week', 'libraries'];
         var wordCounts = {};
         $.each(allData, function (key, val) {
             // Word counting
@@ -34,17 +34,15 @@ $(function () {
             });
             var tweetsQuarter = (Math.round((tweetCounts.indexOf(val.tweets) / tweetCounts.length) * 4));
             var followersQuarter = (Math.round((followerCounts.indexOf(val.followers) / followerCounts.length) * 4));
-            $('#divGallery').append('<div class="item col col-lg-3 col-md-4 col-sm-4 col-xs-12" data-title="' + val.library + '" data-tweets="' + val.tweets +'" data-followers="' + val.followers + '" data-type="' + val.type + '" data-date-tweeted="' + (val.lastTweeted.isValid() ? val.lastTweeted.format('YYYYMMDDHHmm') : '0') + '" data-date-created="' + (val.accountCreated.isValid() ? val.accountCreated.format('YYYYMMDDHHmm') : 0) + '">'
+            $('#divGallery').append('<div class="item col col-lg-3 col-md-4 col-sm-4 col-xs-12" data-title="' + val.library + '" data-tweets="' + val.tweets + '" data-followers="' + val.followers + '" data-type="' + val.type + '" data-date-tweeted="' + (val.lastTweeted.isValid() ? val.lastTweeted.format('YYYYMMDDHHmm') : '0') + '" data-date-created="' + (val.accountCreated.isValid() ? val.accountCreated.format('YYYYMMDDHHmm') : 0) + '">'
                 + '<div class="panel panel-default">'
                 + '<div class="panel-heading">'
                 + '<span class="itemTitle text-' + countClasses[tweetsQuarter] + '">' + val.library + ' </span>'
                 + '<br/><small class="text-muted">' + (val.accountCreated.isValid() ? 'Created ' + val.accountCreated.fromNow() : 'No twitter account.') + '.</small>'
                 + '</div>'
                 + '<div class="panel-body">'
-                + '<p><span class="label label-' + countClasses[tweetsQuarter] + '"><i class="fa fa-' + smileyIcons[tweetsQuarter] + '"></i> ' + val.tweets + '</span>'
-                + '&nbsp;<small>tweets</small>'
-                + '   <span class="label label-' + countClasses[followersQuarter] + '"><i class="fa fa-' + smileyIcons[followersQuarter] + '"></i> ' + val.followers + '</span>'
-                + '&nbsp;<small>follows</small></p>'
+                + '<p><span class="label label-' + countClasses[tweetsQuarter] + '">' + val.tweets + ' tweets</span>  '
+                + '<span class="label label-' + countClasses[followersQuarter] + '">' + val.followers + ' followers</span></p>'
                 + (val.lastTweeted.isValid() ? '<p><small>' + val.lastTweeted.fromNow() + ': ' + val.lastTweet + '</small></p>' : '')
                 + '</div>'
                 + '<div class="panel-footer">'
@@ -53,16 +51,16 @@ $(function () {
                 + '</div>'
                 + '</div></div>');
         });
-        $('#divGallery').append('<div class="col col-lg-3 col-md-4 col-sm-4 col-xs-12 shufflesizer"></div>');
+        $('#divGallery').append('<div class="col col-lg-3 col-md-4 col-sm-4 col-xs-12" id="shufflesizer"></div>');
         var wordCountSorted = Object.keys(wordCounts).map(function (val, ind) {
             return { word: val, count: wordCounts[val] }
         }).sort(function (a, b) {
             return b.count - a.count;
         });
 
-        // Take twenty keywords
+        // Take twenty keywords - currently disabled.
         $.each(wordCountSorted.slice(0, 6), function () {
-            $('#pKeywords').append('<span class="label label-' + countClasses[Math.round(Math.random() * 4)] + '">' + this.word + '</span> ');
+            // $('#pKeywords').append('<span class="label label-' + countClasses[Math.round(Math.random() * 4)] + '">' + this.word + '</span> ');
         });
 
         // Shuffle!
@@ -71,7 +69,7 @@ $(function () {
             var Shuffle = window.shuffle;
             shuffle = new Shuffle(document.getElementById('divGallery'), {
                 itemSelector: '.item',
-                sizer: '.shufflesizer',
+                sizer: '#shufflesizer',
                 initialSort: {
                     reverse: true,
                     by: function (element) {

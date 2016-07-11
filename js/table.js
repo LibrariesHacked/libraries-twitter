@@ -74,7 +74,8 @@ $(function () {
                                 var createdFriendly = columns[11].data;
                                 var tweetedFriendly = columns[12].data;
                                 var html = '<p>' + (createdFriendly ? 'Account created ' + createdFriendly + ' ago.' : 'No account created') + '</p>'
-                                    + '<p>' + description + '</p>'
+                                    + '<p><span class="label label-success">' + tweets + ' tweets</span> '
+                                    + '<span class="label label-info">' + followers + ' followers</span></p>'
                                     + (tweetedFriendly ? ('<div class="alert alert-info"><strong>' + tweetedFriendly + ' ago: </strong>' + tweet + '</div>') : '')
                                     + (website ? '<a class="btn btn-primary btn-sm" href="' + website + '" target="_blank">Website</a> ' : '')
                                     + '<button class="btn btn-default btn-sm" type="button" data-dismiss="modal">Close</button>';
